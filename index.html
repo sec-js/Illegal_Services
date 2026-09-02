@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Illegal Services</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Curated Catalog</p>
+        <h1>Illegal Services</h1>
+      </div>
+      <label class="search-wrap">
+        <span>Search</span>
+        <input id="searchInput" type="search" placeholder="Search links or domains" />
+      </label>
+    </header>
+
+    <main class="content">
+      <nav id="categoryChips" class="category-chips" aria-label="Categories"></nav>
+      <section id="linkList" class="link-grid" aria-live="polite"></section>
+    </main>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>

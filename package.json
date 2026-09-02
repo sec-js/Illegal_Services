@@ -1,0 +1,21 @@
+{
+  "name": "illegal-services-electron",
+  "version": "1.0.0",
+  "description": "Electron wrapper for the Illegal Services bookmark catalog",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --check main.js && node --check preload.js && node --check renderer.js"
+  },
+  "keywords": [
+    "illegal-services",
+    "bookmarks",
+    "electron",
+    "catalog"
+  ],
+  "author": "Illegal Services",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.7.1"
+  }
+}
