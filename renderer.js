@@ -1,41 +1,4 @@
-const categories = [
-  {
-    name: 'Streaming',
-    links: [
-      { label: 'The Pirate Bay', url: 'https://thepiratebay.org/' },
-      { label: '1337x', url: 'https://1337x.to/' },
-      { label: 'RARBG', url: 'https://rarbg.to/' },
-      { label: 'YTS', url: 'https://yts.mx/' }
-    ]
-  },
-  {
-    name: 'Direct Download',
-    links: [
-      { label: 'GLOAD', url: 'https://gload.to/' },
-      { label: 'Files.fm', url: 'https://files.fm/' },
-      { label: 'MixDrop', url: 'https://mixdrop.co/' },
-      { label: 'Rapidgator', url: 'https://rapidgator.net/' }
-    ]
-  },
-  {
-    name: 'Torrent Indexes',
-    links: [
-      { label: 'TorrentDownloads', url: 'https://www.torrentdownloads.pro/' },
-      { label: 'TorLock', url: 'https://www.torlock.com/' },
-      { label: 'Kickass Torrents', url: 'https://kickasstorrents.to/' },
-      { label: 'Demonoid', url: 'https://www.demonoid.is/' }
-    ]
-  },
-  {
-    name: 'Security Tools',
-    links: [
-      { label: 'CyberChef', url: 'https://gchq.github.io/CyberChef/' },
-      { label: 'Have I Been Pwned', url: 'https://haveibeenpwned.com/' },
-      { label: 'VirusTotal', url: 'https://www.virustotal.com/' },
-      { label: 'Shodan', url: 'https://www.shodan.io/' }
-    ]
-  }
-];
+let categories = [];
 
 const listEl = document.querySelector('#linkList');
 const searchEl = document.querySelector('#searchInput');
@@ -127,5 +90,8 @@ searchEl.addEventListener('input', (event) => {
   renderCategories(event.target.value);
 });
 
-buildChips();
-renderCategories();
+window.app.getLinks().then((data) => {
+  categories = data;
+  buildChips();
+  renderCategories();
+});

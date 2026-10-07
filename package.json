@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "node --check main.js && node --check preload.js && node --check renderer.js"
+    "test": "node --check main.js && node --check preload.js && node --check renderer.js && node -e \"JSON.parse(require('fs').readFileSync('links.json','utf8'))\""
   },
   "keywords": [
     "illegal-services",
